@@ -1,5 +1,5 @@
 package io.hexlet.xo.model;
 
-public enum Fugire {
-    X, O;
+public enum Figure {
+    X, O
 }
