@@ -29,6 +29,6 @@ public class FieldTest {
         field.setFigure(inputPoint, inputFigure);
         final Figure actualFigure = field.getFigure(inputPoint);
 
-        assertEquals(inputPoint, actualFigure);
+        assertEquals(inputFigure, actualFigure);
     }
 }
