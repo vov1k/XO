@@ -10,7 +10,7 @@ public class FieldTest {
 
     @Test
     public void testGetSize() throws Exception {
-        final Field field = new Field[];
+        final Field field = new Field();
 
         assertEquals(3, field.getSize());
     }
@@ -24,7 +24,7 @@ public class FieldTest {
     public void testSetFigure() throws Exception {
         final Field field = new Field();
         final Point inputPoint = new Point(0,0);
-        final Figure inputFigure = new Figure.O;
+        final Figure inputFigure = Figure.O;
 
         field.setFigure(inputPoint, inputFigure);
         final Figure actualFigure = field.getFigure(inputPoint);
