@@ -11,14 +11,14 @@ public class WinnerController {
     public Figure getWinner(final Field field) {
         try {
             for (int i = 0; i < 3; i++) {
-                if (check(field, new Point(0,0), p -> new Point(p.x, p.y + 1))) {
+                if (check(field, new Point(i,0), p -> new Point(p.x, p.y + 1))) {
                     return field.getFigure(new Point(i,0));
                 }
             }
 
             for (int i = 0; i < 3; i++) {
-                if (check(field, new Point(0,0), p -> new Point(p.x + 1, p.y))) {
-                    return field.getFigure(new Point(i, 0));
+                if (check(field, new Point(0,i), p -> new Point(p.x + 1, p.y))) {
+                    return field.getFigure(new Point(0, i));
                 }
             }
 
@@ -47,12 +47,13 @@ public class WinnerController {
         final Point nextPoint = pointGenerator.next(currentPoint);
         try {
             currenFigure = field.getFigure(currentPoint);
+
+            if (currenFigure == null) return false;
+
             nextFigure = field.getFigure(nextPoint);
         }catch (InvalidPointException e) {
             return true;
         }
-
-        if (currenFigure == null) return false;
 
         if (currenFigure != nextFigure) return false;
 
